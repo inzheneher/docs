@@ -66,7 +66,7 @@ To install Calico for network policy enforcement, use the following commands:
 There are two ways to install Istio: using `istioctl` or via `helm`.
 Before installing Istio, ensure you have the necessary CRDs for Istio Gateway API:
     ```bash
-    kubectl get crd gateways.gateway.networking.k8s.io &>/dev/null || \
+    kubectl get crd gateways.gateway.networking.k8s.io &> /dev/null || \
     { kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml; }
     ```
 ### Option 1: Install Istio with `istioctl`
