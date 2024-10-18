@@ -25,13 +25,13 @@ To install Calico, which enforces network policies in your cluster, run the foll
 4. Install Istio
 Before installing Istio, make sure the necessary Custom Resource Definitions (CRDs) for the Gateway API are in place. Run this script to check for and install the required CRDs:
     ```bash
-    ./install_istio_crds.sh
+    ./install_crds.sh
     ```
    #### You can install Istio in two different ways: using istioctl or helm.
    Choose one of the following options based on your preference:  
    **Option 1: Install Istio using `istioctl`:**
    ```bash
-      ./install_istio_istioctl.sh
+   ./install_istio_istioctl.sh
    ```  
    **Option 2: Install Istio using `helm`:**
    ```bash
