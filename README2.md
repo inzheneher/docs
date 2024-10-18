@@ -13,10 +13,15 @@ If your AKS cluster has the Azure Policy Add-on enabled, it might interfere with
     ./remove_azure_policy.sh
     ```
 2. Retrieve AKS Cluster Credentials
-To interact with your AKS cluster using kubectl, you need to retrieve the cluster credentials. Run the following script:
+   To interact with your AKS cluster using `kubectl`, retrieve the cluster credentials by running the following command:
     ```bash
-    ./get_aks_credentials.sh
+    ./get_aks_credentials.sh <resource-group> <cluster-name>
     ```
+   Replace `<resource-group>` with the name of your Azure resource group and `<cluster-name>` with the name of your AKS cluster.  
+   For example:
+   > ./get_aks_credentials.sh MyResourceGroup MyAKSCluster 
+   
+   This script will also modify the kubeconfig file to bypass certificate authority checks if needed.
 3. Install Calico Network Policies
 To install Calico, which enforces network policies in your cluster, run the following script:
     ```bash

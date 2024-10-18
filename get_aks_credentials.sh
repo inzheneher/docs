@@ -1,8 +1,19 @@
 #!/bin/bash
 
-# Set variables for your cluster
-RESOURCE_GROUP="MyResourceGroup"
-CLUSTER_NAME="MyAKSCluster"
+# Function to display usage information
+usage() {
+  echo "Usage: $0 <resource-group> <cluster-name>"
+  exit 1
+}
+
+# Check if two arguments were passed
+if [ "$#" -ne 2 ]; then
+  usage
+fi
+
+# Assign command-line arguments to variables
+RESOURCE_GROUP=$1
+CLUSTER_NAME=$2
 
 # Get AKS credentials
 az aks get-credentials --resource-group $RESOURCE_GROUP --name $CLUSTER_NAME
